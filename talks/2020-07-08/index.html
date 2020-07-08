@@ -78,6 +78,218 @@ Plan:
 
 ---
 
+# Cross Platform GUIs in Go (1/12)
+
+* Go is very very popular for backend development.
+* As well as infrastructure, and platform.
+
+* What about frontend?
+* What about GUIs?
+
+* What about on the Web?
+* What about on the desktop?
+
+---
+
+# Cross Platform GUIs in Go (2/12)
+## For Web...
+
+* Compile Go to WebAssembly (WASM)
+
+    GOOS=js GOARCH=wasm go build -o programname.wasm
+
+* Use Go instead of JavaScript
+
+---
+
+# Cross Platform GUIs in Go (3/12)
+## For Web...
+
+	&lt;!doctype html&gt;
+	&lt;html&gt;
+	  &lt;head&gt;&lt;/head&gt;
+	  &lt;body&gt;
+	    &lt;script src="wasm_exec.js"&gt;&lt;/script&gt;
+	    &lt;script&gt;
+	      (function() {
+	        async function init() {
+	          const go = new Go();
+	          let result = await WebAssembly.instantiateStreaming(
+	              fetch("programname.wasm"),
+                      go.importObject
+                  );
+	          go.run(result.instance);
+	        }
+	        init();
+	      })()
+	    &lt;/script&gt;
+	  &lt;/body&gt;
+	&lt;/html&gt;
+---
+
+# Cross Platform GUIs in Go (4/12)
+## For Desktop...
+
+Do something similar to:
+
+* Electron https://www.electronjs.org/
+* Phonegap https://phonegap.com/
+* Cordova https://cordova.apache.org/
+* XUL Runner
+* etc etc etc
+
+Solution:
+
+* Use web browser engine
+* But it looks like a regular application (not a web browser)
+
+Use:
+
+* HTML
+* CSS
+* ~~JavaScript~~ Replace JavaScript with Go compiled to WASM
+
+---
+
+# Cross Platform GUIs in Go (5/12)
+
+	package main
+	
+	import (
+		"fmt"
+		"syscall/js" // <---------- access to DOM, web browser, etc.
+	)
+
+---
+
+# Cross Platform GUIs in Go (6/12)
+
+	var window js.Value
+        {
+                window = js.Global()
+
+                if window.IsNull() {
+                        log("ERROR: ‘window’ is null")
+                        return
+                }
+                if window.IsUndefined() {
+                        log("ERROR: ‘window’ is undefined")
+                        return
+                }
+        }
+
+---
+
+# Cross Platform GUIs in Go (7/12)
+
+	var document js.Value
+	{
+		document = js.Global().Get("document")
+
+		if document.IsNull() {
+			log("ERROR: ‘document’ is null")
+			return
+		}
+                if document.IsUndefined() {
+			log("ERROR: ‘document’ is undefined")
+			return
+                }
+	}
+	
+---
+
+# Cross Platform GUIs in Go (8/12)
+
+	var uint8Array js.Value
+	{
+		uint8Array = js.Global().Get("Uint8Array")
+
+		if uint8Array.IsNull() {
+			log("ERROR: ‘uint8Array’ is null")
+			return
+		}
+		if uint8Array.IsUndefined() {
+			log("ERROR: ‘uint8Array’ is undefined")
+			return
+		}
+	}
+
+---
+
+# Cross Platform GUIs in Go (9/12)
+
+JavaScript
+	document.createElement("canvas")
+
+Go:
+	var canvas js.Value
+	{
+		canvas = document.Call("createElement", "canvas")
+
+		if js.Null() == canvas {
+			log("ERROR: ‘canvas’ is null")
+			return
+		}
+		if js.Undefined() == canvas {
+			log("ERROR: ‘canvas’ is undefined")
+			return
+		}
+	}
+
+---
+
+# Cross Platform GUIs in Go (10/12)
+
+       var ctx js.Value
+        {
+                ctx = canvas.Call("getContext", "2d")
+
+                if js.Null() == ctx {
+                        log("ERROR: ‘ctx’ is null")
+                        return
+                }
+                if js.Undefined() == ctx {
+                        log("ERROR: ‘ctx’ is undefined")
+                        return
+                }
+        }
+
+---
+
+# Cross Platform GUIs in Go (11/12)
+# For Desktop...
+
+To launch the desktop application window...
+
+	import "github.com/reiver/go-webui"
+	
+	// ...
+	
+	func serveHttp(w http.ResponseWriter, r *http.Request) {
+		// ...
+	}
+	
+	// ...
+	
+	var handler http.Handler = http.HandlerFunc(serveHttp)
+	
+	// ...
+	
+	err := webui.LaunchAndServe(handler)
+
+---
+
+# Cross Platform GUIs in Go (12/12)
+
+* We create a Go version of Electron.
+* Write Go frontend code by compiling Go to WebAssembly (WASM)
+
+---
+
+# Advanced Techniques When Creating A (Custom) Type
+
+---
+
 # Who Am I
 
 Name: Charles Iliya Krempeaux
@@ -99,6 +311,10 @@ Longer Bio: http://changelog.ca/
 
 ---
 
+# Runtime Generics in Go – Using Reflection
+
+---
+
 # Thank You!
 
 Connect With Me:
@@ -113,7 +329,6 @@ Learn With Me:
 
 * Learn Go In One Day — https://forms.gle/TCBitj7L6Nn3adCf6
 * CompSci Academy — https://compsci.academy/
-
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
