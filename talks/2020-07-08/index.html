@@ -341,7 +341,23 @@ class: center, middle, inverse
 
 ---
 
-# Advanced Techniques When Creating A (Custom) Type
+# Advanced Techniques When Creating A (Custom) Type (1/7)
+
+	type Money struct {
+		center int64
+	}
+
+Make your (custom) type fit relevant intefaces.
+
+---
+
+# Advanced Techniques When Creating A (Custom) Type (2/7)
+
+	import "database/sql"
+
+	sql.DB.Query()
+
+	sql.Rows.Scan()
 
 ---
 
