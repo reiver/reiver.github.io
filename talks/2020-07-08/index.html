@@ -14,12 +14,26 @@
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+      }
+      .inverse a {
+        color: #F92672;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: center, middle
+class: center, middle, inverse
 
 # Top 3 Lessons Learned Using Go For The Last 7 Years
 ## by Charles Iliya Krempeaux
@@ -36,6 +50,34 @@ LinkedIn: https://www.linkedin.com/in/charlesiliyakrempeaux
 
 ---
 
+# Agenda
+
+Restrictions for this talk:
+
+* had to pick (only) 3 lessons — that is not easy;
+* only have 15 minutes to cover all this 😨
+
+Plan:
+
+1. Who Am I
+2. Cross Platform GUIs in Go
+3. Advanced Techniques When Creating A (Custom) Type
+4. Runtime Generics in Go – Using Reflection
+5. ~~Game Development In Go~~
+6. ~~Option Types in Go~~
+7. ~~Actor Model in Go~~
+8. ~~Erlang's Supervision Tree in Go~~
+9. ~~Function & Method Overloading in Go~~
+10. ~~Duck Typing... Well, Almost~~
+11. ~~How To Not Have A Catastrophe With You Database~~
+12. ~~Generics in Go – Using Code Generation~~
+13. ~~Displaying Images on Go Playground~~
+14. ~~Debugging in Go~~
+15. ~~Safe Way of Working With Money in Go~~
+16. Learning Go?
+
+---
+
 # Who Am I
 
 Name: Charles Iliya Krempeaux
@@ -46,9 +88,9 @@ Originally a self-taught programmer — i.e., learned from reading books & magaz
 
 Formal Background: Computer Science & Mathematics (& some physics)
 
-Some Past Companies: Koho, Electronic Arts (EA), Trulioo, Hootsuite, Microsoft, etc etc etc.
+Some Past Companies: Koho, Electronic Arts (EA), Trulioo, Hootsuite, Microsoft, etc etc etc… plus many others
 
-Now: CompSci Academy, Railtown Ventures
+Now: CompSci Academy, Railtown Ventures, etc
 
 Bio:
 > Charles Iliya Krempeaux has more than ¼ century professional experience — entrepreneur, advisor, executive (CEO, CTO), product researcher, product developer, computer scientist, software engineer, board member, chairman.
