@@ -259,10 +259,12 @@ Use:
 
 # Cross Platform GUIs in Go (9/12)
 
-JavaScript
+JavaScript:
+
 	document.createElement("canvas")
 
 Go:
+
 	var canvas js.Value
 	{
 		canvas = document.Call("createElement", "canvas")
@@ -280,6 +282,12 @@ Go:
 ---
 
 # Cross Platform GUIs in Go (10/12)
+
+JavaScript:
+
+	canvas.getContext("2d")
+
+Go:
 
        var ctx js.Value
         {
@@ -323,7 +331,7 @@ To launch the desktop application window...
 # Cross Platform GUIs in Go (12/12)
 
 * We create a Go version of Electron.
-* Write Go frontend code by compiling Go to WebAssembly (WASM)
+* Write Go frontend code by compiling Go to WebAssembly (WASM).
 
 ---
 
