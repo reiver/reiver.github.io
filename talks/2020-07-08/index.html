@@ -29,8 +29,12 @@
         text-decoration: none;
       }
 
-      .larger p {
-          font-size: 160%;
+      .larger p ,
+      .larger li {
+          font-size: 180%;
+      }
+      .larger .remark-code {
+          font-size: 140%;
       }
     </style>
   </head>
@@ -39,7 +43,8 @@
 
 class: center, middle, inverse
 
-# Top 3 Lessons Learned Using Go For The Last 7 Years
+# Top 3 Lessons Learned
+# Using Go For The Last 7 Years
 ## by Charles Iliya Krempeaux
 
 Web: http://changelog.ca/
@@ -58,8 +63,8 @@ LinkedIn: https://www.linkedin.com/in/charlesiliyakrempeaux
 
 Restrictions for this talk:
 
-* had to pick (only) 3 lessons — that is not easy;
 * only have 15 minutes to cover all this 😨
+* had to pick (only) 3 lessons — that is not easy
 
 Plan:
 
@@ -73,7 +78,7 @@ Plan:
 8. ~~Erlang's Supervision Tree in Go~~
 9. ~~Function & Method Overloading in Go~~
 10. ~~Duck Typing... Well, Almost~~
-11. ~~How To Not Have A Catastrophe With You Database~~
+11. ~~How To Avoid A Catastrophe With Your Database – Go Types To The Rescue~~
 12. ~~Generics in Go – Using Code Generation~~
 13. ~~Displaying Images on Go Playground~~
 14. ~~Debugging in Go~~
@@ -129,32 +134,51 @@ class: center, middle, inverse
 
 ---
 
-# Cross Platform GUIs in Go (1/12)
+class: larger
 
-* Go is very very popular for backend development.
-* As well as infrastructure, and platform.
+# Cross Platform GUIs in Go (1/14)
 
-* What about frontend?
-* What about GUIs?
+Go is very popular for backend development, infrastructure, and platforms.
 
-* What about on the Web?
-* What about on the desktop?
+What about frontend?
 
----
+What about GUIs?
 
-# Cross Platform GUIs in Go (2/12)
-## For Web...
+Can we use Go for Web frontend development?
 
-* Compile Go to WebAssembly (WASM)
-
-    GOOS=js GOARCH=wasm go build -o programname.wasm
-
-* Use Go instead of JavaScript
+Can we use Go for desktop applications?
 
 ---
 
-# Cross Platform GUIs in Go (3/12)
-## For Web...
+class: larger
+
+# Cross Platform GUIs in Go (2/14)
+
+Can we use Go for Web frontend development? — **YES!**
+
+Can we use Go for desktop applications? — **YES!**
+
+---
+
+class: larger
+
+# Cross Platform GUIs in Go (3/14)
+## For Web Frontend Development...
+
+* HTML
+* CSS
+* ~~JavaScript~~ Replace JavaScript with Go compiled to WASM
+
+Compile Go to WebAssembly (WASM):
+
+	GOOS=js GOARCH=wasm go build -o programname.wasm
+
+Use Go instead of JavaScript
+
+---
+
+# Cross Platform GUIs in Go (4/14)
+## For Web Frontend Development...
 
 	&lt;!doctype html&gt;
 	&lt;html&gt;
@@ -178,8 +202,10 @@ class: center, middle, inverse
 	&lt;/html&gt;
 ---
 
-# Cross Platform GUIs in Go (4/12)
-## For Desktop...
+class: larger
+
+# Cross Platform GUIs in Go (5/14)
+## For Desktop Applications...
 
 Do something similar to:
 
@@ -188,11 +214,17 @@ Do something similar to:
 * Cordova https://cordova.apache.org/
 * XUL Runner
 * etc etc etc
+---
+
+class: larger
+
+# Cross Platform GUIs in Go (6/14)
+## For Desktop Applications...
 
 Solution:
 
 * Use web browser engine
-* But it looks like a regular application (not a web browser)
+* But it looks like a regular desktop application (not a web browser)
 
 Use:
 
@@ -202,37 +234,51 @@ Use:
 
 ---
 
-# Cross Platform GUIs in Go (5/12)
+class: larger
+
+# Cross Platform GUIs in Go (7/14)
 
 	package main
 	
 	import (
 		"fmt"
-		"syscall/js" // <---------- access to DOM, web browser, etc.
+		"syscall/js" // <-- access to DOM, web browser, etc.
 	)
 
+See: https://golang.org/pkg/syscall/js/
+
+Go's fmt.Print() sends output to same place as JavaScript's console.log()
+
 ---
 
-# Cross Platform GUIs in Go (6/12)
+class: larger
 
+# Cross Platform GUIs in Go (8/14)
+
+	// JavaScript: window
+	
 	var window js.Value
-        {
-                window = js.Global()
-
-                if window.IsNull() {
-                        log("ERROR: ‘window’ is null")
-                        return
-                }
-                if window.IsUndefined() {
-                        log("ERROR: ‘window’ is undefined")
-                        return
-                }
-        }
+	{
+		window = js.Global()
+		
+		if window.IsNull() {
+			log("ERROR: ‘window’ is null")
+			return
+		}
+		if window.IsUndefined() {
+			log("ERROR: ‘window’ is undefined")
+			return
+		}
+	}
 
 ---
 
-# Cross Platform GUIs in Go (7/12)
+class: larger
 
+# Cross Platform GUIs in Go (9/14)
+
+	// JavaScript: document
+	
 	var document js.Value
 	{
 		document = js.Global().Get("document")
@@ -241,16 +287,20 @@ Use:
 			log("ERROR: ‘document’ is null")
 			return
 		}
-                if document.IsUndefined() {
+		if document.IsUndefined() {
 			log("ERROR: ‘document’ is undefined")
 			return
-                }
+		}
 	}
 	
 ---
 
-# Cross Platform GUIs in Go (8/12)
+class: larger
 
+# Cross Platform GUIs in Go (10/14)
+
+	// JavaScript: Uint8Array
+	
 	var uint8Array js.Value
 	{
 		uint8Array = js.Global().Get("Uint8Array")
@@ -267,14 +317,12 @@ Use:
 
 ---
 
-# Cross Platform GUIs in Go (9/12)
+class: larger
 
-JavaScript:
+# Cross Platform GUIs in Go (11/14)
 
-	document.createElement("canvas")
-
-Go:
-
+	// JavaScript: document.createElement("canvas")
+	
 	var canvas js.Value
 	{
 		canvas = document.Call("createElement", "canvas")
@@ -291,57 +339,58 @@ Go:
 
 ---
 
-# Cross Platform GUIs in Go (10/12)
+class: larger
 
-JavaScript:
+# Cross Platform GUIs in Go (12/14)
 
-	canvas.getContext("2d")
-
-Go:
-
-       var ctx js.Value
-        {
-                ctx = canvas.Call("getContext", "2d")
-
-                if js.Null() == ctx {
-                        log("ERROR: ‘ctx’ is null")
-                        return
-                }
-                if js.Undefined() == ctx {
-                        log("ERROR: ‘ctx’ is undefined")
-                        return
-                }
-        }
+	// JavaScript: canvas.getContext("2d")
+	
+	var ctx js.Value
+	{
+		ctx = canvas.Call("getContext", "2d")
+		
+		if js.Null() == ctx {
+			log("ERROR: ‘ctx’ is null")
+			return
+		}
+		if js.Undefined() == ctx {
+			log("ERROR: ‘ctx’ is undefined")
+			return
+		}
+	}
 
 ---
 
-# Cross Platform GUIs in Go (11/12)
+class: larger
+
+# Cross Platform GUIs in Go (13/14)
 # For Desktop...
 
 To launch the desktop application window...
 
 	import "github.com/reiver/go-webui"
 	
-	// ...
-	
 	func serveHttp(w http.ResponseWriter, r *http.Request) {
 		// ...
 	}
 	
-	// ...
-	
 	var handler http.Handler = http.HandlerFunc(serveHttp)
-	
-	// ...
 	
 	err := webui.LaunchAndServe(handler)
 
 ---
 
-# Cross Platform GUIs in Go (12/12)
+class: larger
 
-* We create a Go version of Electron.
-* Write Go frontend code by compiling Go to WebAssembly (WASM).
+# Cross Platform GUIs in Go (14/14)
+
+Electron ( https://www.electronjs.org/ ) uses HTML, CSS, and JavaScript
+to create cross platform desktop applications.
+
+We created a Go version of Electron — https://github.com/reiver/go-webui .
+Where instead of using HTML, CSS, and JavaScript
+we use HTML, CSS, and Go (compiled to WebAssembly (WASM))
+to create cross platform desktop applications.
 
 ---
 
