@@ -776,7 +776,7 @@ class: center, middle, inverse
 
 class: larger
 
-# Erlang's OTP Supervision Tree in Go (1/6)
+# Erlang's OTP Supervision Tree in Go (1/7)
 
 * one_for_one
 * one_for_all
@@ -789,21 +789,37 @@ https://learnyousomeerlang.com/supervisors
 
 class: larger
 
-# Erlang's OTP Supervision Tree in Go (2/6)
+# Erlang's OTP Supervision Tree in Go (2/7)
 
-* one_for_one
-  * ex: workers that e-mail new users a welcome e-mail
-* one_for_all
-  * 
-* rest_for_one
-* simple_one_for_one
+one_for_one example:
 
+worker processes or threads that e-mail new users a welcome e-mail
 
 ---
 
 class: larger
 
-# Erlang's OTP Supervision Tree in Go (3/6)
+# Erlang's OTP Supervision Tree in Go (3/7)
+
+one_for_all example:
+
+distributed monolith
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (4/7)
+
+* rest_for_one example:
+
+pipeline
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (5/7)
 
 	// One For One
 
@@ -827,14 +843,22 @@ class: larger
 
 class: larger
 
-# Erlang's OTP Supervision Tree in Go (4/6)
+# Erlang's OTP Supervision Tree in Go (6/7)
 
-	// One For One
+	// One For All
 
 	type KillableToiler interface {
 		Toil()
 		Kill()
 	}
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (7/7)
+
+	// One For All
 
 	var toilers []KillableToiler
 
@@ -850,14 +874,6 @@ class: larger
 			toiler.Toil()
 		}()
 	}
-
----
-
-class: larger
-
-# Erlang's OTP Supervision Tree in Go (1/2)
-
-	// One For All
 
 ---
 
