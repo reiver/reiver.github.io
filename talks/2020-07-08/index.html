@@ -83,11 +83,11 @@ Original Plan:
 1. Who Am I
 2. Yes You Can – You Can Create Cross Platform GUIs in Go
 3. Advanced Techniques When Creating A (Custom) Type
-4. Runtime Generics in Go – Using Reflection
+4. Erlang's OTP Supervision Tree in Go
 5. ~~Game Development In Go~~
 6. ~~Option Types in Go~~
 7. ~~Actor Model in Go~~
-8. ~~Erlang's Supervision Tree in Go~~
+8. ~~Runtime Generics in Go – Using Reflection~~
 9. ~~Function & Method Overloading in Go~~
 10. ~~Duck Typing... Well, Almost~~
 11. ~~How To Avoid A Catastrophe With Your Database – Go Types To The Rescue~~
@@ -108,8 +108,8 @@ Revised Plan:
 1. Who Am I
 2. Yes You Can – You Can Cross Platform GUIs in Go
 3. Advanced Techniques When Creating A (Custom) Type
-4. Runtime Generics in Go – Using Reflection
-16. Thank You!
+4. Erlang's OTP Supervision Tree in Go
+5. Thank You!
 
 ---
 
@@ -770,11 +770,94 @@ Sometimes it can make your (custom) type work with multiple packages
 
 class: center, middle, inverse
 
-# Runtime Generics in Go – Using Reflection
+# Erlang's OTP Supervision Tree in Go
 
 ---
 
-# Runtime Generics in Go – Using Reflection
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (1/6)
+
+* one_for_one
+* one_for_all
+* rest_for_one
+* simple_one_for_one
+
+https://learnyousomeerlang.com/supervisors
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (2/6)
+
+* one_for_one
+  * ex: workers that e-mail new users a welcome e-mail
+* one_for_all
+  * 
+* rest_for_one
+* simple_one_for_one
+
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (3/6)
+
+	// One For One
+
+	type Toiler interface {
+		Toil()
+	}
+
+
+	for {
+		func() {
+			defer func() {
+				recover()
+			}()
+
+			// THIS MIGHT panic()
+			toiler.Toil()
+		}()
+	}
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (4/6)
+
+	// One For One
+
+	type KillableToiler interface {
+		Toil()
+		Kill()
+	}
+
+	var toilers []KillableToiler
+
+	for {
+		func() {
+			defer func() {
+				recover()
+
+				killThemAll(toilers)
+			}()
+
+			// THIS MIGHT panic()
+			toiler.Toil()
+		}()
+	}
+
+---
+
+class: larger
+
+# Erlang's OTP Supervision Tree in Go (1/2)
+
+	// One For All
 
 ---
 
