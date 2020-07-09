@@ -626,8 +626,8 @@ class: larger
 What happens if I do this:
 
 	response := struct{
-		Name string
-		Balance Money
+		Name string   `json:"name"`
+		Balance Money `json:"balance"`
 	}{
 		Name: "Joe Blow",
 		Balance: DollarsAndCents(1,0), // $1.00
@@ -646,11 +646,11 @@ class: larger
 
 Result:
 
-	{"Name":"Joe Blow","Balance":{}}
+	{"bame":"Joe Blow","balance":{}}
 
 That is NOT what I want! I want:
 
-	{"Name":"Joe Blow","Balance":"$1.00"}
+	{"name":"Joe Blow","balance":"$1.00"}
 
 How do we fix that?
 
@@ -701,8 +701,8 @@ class: larger
 And now:
 
 	response := struct{
-		Name string
-		Balance Money
+		Name string   `json:"name"`
+		Balance Money `json:"balance"`
 	}{
 		Name: "Joe Blow",
 		Balance: DollarsAndCents(1,0), // $1.00
@@ -721,7 +721,7 @@ class: larger
 
 Result:
 
-	{"Name":"Joe Blow","Balance":"$1.00"}
+	{"name":"Joe Blow","balance":"$1.00"}
 
 ---
 
