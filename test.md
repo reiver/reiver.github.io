@@ -31,20 +31,28 @@ This is **bold**.
 
 This is __italics__.
 
-This is <mark>marked</mark>.
+This is ==marked==.
 
-This is <s>strikethrough</s>.
+This is ~~strikethrough~~.
 
-This is <strong>strong</strong>.
-
-This is <u>underline</u>.
 
 ### heading 3
 
 This is `code`.
+	
+#### heading 4
 
+Hello!
 
+##### heading 5
 
+How do you do?
+
+Hello!
+	
+###### heading 6
+
+How do you do?
 
 You should see a horizontal-rule after this.
 
@@ -83,4 +91,3 @@ Here is a table:
 | apple | banana | cherry | date   |
 | ONE   | TWO    | THREE  | FOUR   |
 
-</html>
