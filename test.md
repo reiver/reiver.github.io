@@ -30,3 +30,57 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 This is **bold**.
 
 This is __italics__.
+
+This is <mark>marked</mark>.
+
+This is <s>strikethrough</s>.
+
+This is <strong>strong</strong>.
+
+This is <u>underline</u>.
+
+### heading 3
+
+This is `code`.
+
+
+
+
+You should see a horizontal-rule after this.
+
+---
+
+Here is a block-quotation:
+
+>  Think for yourselves and let others enjoy the privilege to do so, too.
+
+* unordered list item #1
+* unordered list item #2
+* unordered list item #3
+
+1. ordered list item #1
+2. ordered list item #2
+3. ordered list item #3
+
+Here is a figure:
+
+```
+ ______                __      
+/\__  _\              /\ \__   
+\/_/\ \/    __    ____\ \ ,_\  
+   \ \ \  /'__`\ /',__\\ \ \/  
+    \ \ \/\  __//\__, `\\ \ \_ 
+     \ \_\ \____\/\____/ \ \__\
+      \/_/\/____/\/___/   \/__/
+```
+
+figure 1: test ASCII-art text
+
+Here is a table:
+
+| Once  | Twice  | Thrice | Fource |
+|-------|--------|--------|--------|
+| apple | banana | cherry | date   |
+| ONE   | TWO    | THREE  | FOUR   |
+
+</html>
