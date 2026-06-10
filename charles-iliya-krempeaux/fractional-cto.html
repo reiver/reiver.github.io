@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="WebPage">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fractional CTO — Charles Iliya Krempeaux, B.Sc</title>
+<style>
+@font-face {
+	font-family: "IBM Plex Sans";
+	src: url("../IBMPlexSans-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "IBM Plex Sans";
+	src: url("../IBMPlexSans-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "IBM Plex Sans";
+	src: url("../IBMPlexSans-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	background: #e8ecf0;
+	color: #1d2129;
+	line-height: 1.6;
+	padding: 2rem 1rem;
+}
+
+a {
+	color: #1a73e8;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+main {
+	max-width: 720px;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	overflow: hidden;
+	padding: 3rem 2.5rem;
+}
+
+header {
+	border-bottom: 2px solid #1d2129;
+	padding-bottom: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+header h1 {
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+header p.title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #657786;
+	margin-top: 0.25rem;
+}
+
+header ul.contact {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.5rem;
+	margin-top: 0.75rem;
+	font-size: 0.85rem;
+	color: #657786;
+}
+
+section {
+	margin-bottom: 2rem;
+}
+
+section:last-child {
+	margin-bottom: 0;
+}
+
+h2 {
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #657786;
+	border-bottom: 1px solid #e8ecf0;
+	padding-bottom: 0.35rem;
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+/*************************************************************************
+ *                                                                       *
+ * entry                                                                 *
+ *                                                                       *
+ *************************************************************************/
+
+
+.entry {
+	margin-bottom: 1.25rem;
+}
+
+.entry:last-child {
+	margin-bottom: 0;
+}
+
+.entry-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0 1rem;
+}
+
+.entry-header .date {
+	font-size: 0.85rem;
+	color: #657786;
+	white-space: nowrap;
+}
+
+.entry-header p {
+	font-size: 0.9rem;
+	color: #657786;
+	font-style: italic;
+}
+
+.entry > p,
+.entry > blockquote > p,
+.entry > ul {
+	font-size: 0.9rem;
+	margin-top: 0.35rem;
+}
+
+.entry ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.entry ul li::before {
+	content: "\2014\00a0";
+	color: #a0aab4;
+}
+
+.skills-list,
+.industries-list {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.skills-list li,
+.industries-list li {
+	background: #f0f2f5;
+	border-radius: 4px;
+	padding: 0.2rem 0.6rem;
+	font-size: 0.82rem;
+	color: #1d2129;
+}
+
+.skills-list li::before,
+.industries-list li::before {
+	content: none;
+}
+
+.summary p {
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+
+footer {
+	border-top: 1px solid #e8ecf0;
+	margin-top: 2rem;
+	padding-top: 1rem;
+	text-align: center;
+	font-size: 0.8rem;
+	color: #a0aab4;
+}
+
+@media (max-width: 480px) {
+	main {
+		padding: 2rem 1.25rem;
+	}
+
+	.entry-header {
+		flex-direction: column;
+	}
+}
+</style>
+</head>
+<body>
+<main>
+<article typeof="Person">
+	<header>
+		<h1><span property="name">Charles Iliya Krempeaux</span>, B.Sc.</h1>
+		<p class="title" property="jobTitle">Fractional Chief Technology Officer (<abbr title="chief technology officier">CTO</abbr>)</p>
+		<ul class="contact">
+			<li><a target="_blank" href="mailto:cikrempeaux@gmail.com" property="email">cikrempeaux@gmail.com</a></li>
+			<li>Metro Vancouver, <abbr title="British Columbia">BC</abbr>, Canada</li>
+			<li><a target="_blank" href="https://reiver.link/" property="url">reiver.link</a></li>
+		</ul>
+	</header>
+
+	<section class="summary">
+		<h2>Summary</h2>
+		<p>
+			Technology executive with over 30 years of experience in software engineering, product development, and engineering leadership.
+			Proven track record of building and scaling engineering teams, shipping products from zero to market, and guiding startups through critical growth stages.
+		</p>
+		<p>
+			Available as a <mark>fractional <abbr title="Chief Technology Officer">CTO</abbr></mark> to help early-stage and growth-stage companies establish technical strategy, build engineering culture, and deliver results.
+		</p>
+	</section>
+
+	<section>
+		<h2>Experience</h2>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Fractional <abbr title="Chief Technology Officer">CTO</abbr></h3>
+				<span class="date">January 2018 &ndash; December 2024</span>
+			</div>
+			<div class="entry-header">
+				<p>Modus Workflow</p>
+			</div>
+			<ul>
+				<li>
+					Served as a trusted strategic advisor to the CEO.
+				</li>
+				<li>
+					Served as the technical face of the company during its early investor pitches.
+				</li>
+				<li>
+					Co-presented investor pitches alongside the CEO.
+				</li>
+				<li>
+					Leveraged professional network to recruit strategic advisors.
+				</li>
+				<li>
+					Leveraged professional network to identify and engage prospective investors.
+				</li>
+				<li>
+					Sourced and managed an engineering team.
+				</li>
+				<li>
+					Providied product leadership, technical leadership and architectural oversight.
+				</li>
+				<li>
+					Built the company's core software.
+				</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Fractional <abbr title="Chief Technology Officer">CTO</abbr></h3>
+				<span class="date"><time datetime="2024-03-05">March 2024</time> &ndash; <time datetime="2024-08-23">August 2024</time></span>
+			</div>
+			<div class="entry-header">
+				<p>Pye</p>
+			</div>
+			<ul>
+				<li>
+					Served as a trusted strategic advisor to the CEO.
+				</li>
+				<li>
+					Served as the technical face of the company during its early investor pitches.
+				</li>
+				<li>
+					Co-presented investor pitches alongside the CEO.
+				</li>
+				<li>
+					Vetted and led technical discussions with (potential) partner networks — Berachain, Monad, etc.
+				</li>
+				<li>
+					Architected and developed initial back-end targeting Berachain.
+				</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Fractional <abbr title="Chief Technology Officer">CTO</abbr></h3>
+				<span class="date">September 2018 &ndash; December 2022</span>
+			</div>
+			<div class="entry-header">
+				<p>Oraan</p>
+			</div>
+			<ul>
+				<li>
+					Served as a trusted strategic advisor to the CEO.
+				</li>
+				<li>
+					Served as the technical face of the company during its early investor pitches and partnership deals.
+				</li>
+				<li>
+					Architected the initial engineering team structure.
+				</li>
+				<li>
+					Vetted key engineering talent to establish the core development team.
+					Interviewed and selected foundational talent.
+				</li>
+				<li>
+					Vetted and negotiated with multiple commercial banks to set up foundational partnerships facilitating and strategic partnerships.
+				</li>
+				<li>
+					Mentored and guided team engineers.
+				</li>
+				<li>
+					Provided strategic mentorship to product manager.
+				</li>
+				<li>
+					Educated and upskilled the executive team and engineers on FinTech, payments, and banking infrastructure.
+				</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3><abbr title="Chief Technology Officer">CTO</abbr></h3>
+				<span class="date">January 2018 &ndash; November 2019</span>
+			</div>
+			<div class="entry-header">
+				<p>Spark Science</p>
+			</div>
+			<ul>
+				<li>
+					Analyzed market trends and user pain points to identify a key commercial opportunity.
+				</li>
+				<li>
+					Recruited the foundational engineering team, building out the core talent infrastructure from the ground up.
+				</li>
+				<li>
+					Held dual leadership over the engineering and product.
+				</li>
+				<li>
+					Later became CEO.
+				</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Advisor (former <abbr title="Chief Technology Officer">CTO</abbr>)</h3>
+				<span class="date">September 2017 &ndash; January 2018</span>
+			</div>
+			<div class="entry-header">
+				<p>Koho Financial</p>
+			</div>
+			<ul>
+				<li>Built the engineering team from 0 to 35 across backend, frontend, and infrastructure</li>
+				<li>Designed and shipped a real-time payments platform processing $50M+ annually</li>
+				<li>Established CI/CD pipelines, on-call rotations, and incident response procedures</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3><abbr title="Chief Technology Officer">CTO</abbr></h3>
+				<span class="date">May 2015 &ndash; September 2017</span>
+			</div>
+			<div class="entry-header">
+				<p>Koho Financial</p>
+			</div>
+			<ul>
+				<li>Built the engineering team from 0 to 35 across backend, frontend, and infrastructure</li>
+				<li>Designed and shipped a real-time payments platform processing $50M+ annually</li>
+				<li>Established CI/CD pipelines, on-call rotations, and incident response procedures</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Principal Software Engineer &amp; Architect</h3>
+				<span class="date">July 2013 &ndash; November 2014</span>
+			</div>
+			<div class="entry-header">
+				<p>Electronic Arts (<abbr title="Electronic Arts">EA</abbr>)</p>
+			</div>
+			<ul>
+				<li>Built the engineering team from 0 to 35 across backend, frontend, and infrastructure</li>
+				<li>Designed and shipped a real-time payments platform processing $50M+ annually</li>
+				<li>Established CI/CD pipelines, on-call rotations, and incident response procedures</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Engineering Manager</h3>
+				<span class="date">September 2012 &ndash; June 2013</span>
+			</div>
+			<div class="entry-header">
+				<p>Trulioo</p>
+			</div>
+			<ul>
+				<li>Built the engineering team from 0 to 35 across backend, frontend, and infrastructure</li>
+				<li>Designed and shipped a real-time payments platform processing $50M+ annually</li>
+				<li>Established CI/CD pipelines, on-call rotations, and incident response procedures</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Engineering Lead</h3>
+				<span class="date">May 2011 &ndash; September 2012</span>
+			</div>
+			<div class="entry-header">
+				<p>Hootsuite</p>
+			</div>
+			<ul>
+				<li>Built the engineering team from 0 to 35 across backend, frontend, and infrastructure</li>
+				<li>Designed and shipped a real-time payments platform processing $50M+ annually</li>
+				<li>Established CI/CD pipelines, on-call rotations, and incident response procedures</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Director of Engineering &amp; Product Development</h3>
+				<span class="date">July 2008 &ndash; May 2011</span>
+			</div>
+			<div class="entry-header">
+				<p>49 Research</p>
+			</div>
+			<ul>
+				<li>Built the engineering team from 0 to 35 across backend, frontend, and infrastructure</li>
+				<li>Designed and shipped a real-time payments platform processing $50M+ annually</li>
+				<li>Established CI/CD pipelines, on-call rotations, and incident response procedures</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>Education</h2>
+		<div class="entry">
+			<div class="entry-header">
+				<h3><abbr title="Bachelor of Science">B.Sc.</abbr> Computer Science (Major) and Mathematics</h3>
+				<span class="date">2000</span>
+			</div>
+			<div class="entry-header">
+				<p>Simor Fraser University</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>Skills: Development</h2>
+		<ul class="skills-list">
+			<li>Agile</li>
+			<li>API Design</li>
+			<li>CI/CD</li>
+			<li>Cloud Infrastructure</li>
+			<li>Distributed Systems</li>
+			<li>Engineering Management</li>
+			<li>Kanban</li>
+			<li>Software Architecture</li>
+			<li>Software Development</li>
+			<li>Software Engineering</li>
+			<li>Product Development</li>
+			<li>Team Building</li>
+			<li>Technical Strategy</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Skill: Programming Languages</h2>
+		<ul class="skills-list">
+			<li>C</li>
+			<li>Erlang</li>
+			<li>Golang</li>
+			<li>JavaScript</li>
+			<li>PHP</li>
+			<li>Scala</li>
+			<li>Solidity</li>
+			<li>SQL</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Skill: <abbr title="databases">DBs</abbr></h2>
+		<ul class="skills-list">
+			<li>ClickHouse</li>
+			<li>MariaDB</li>
+			<li>MongoDB</li>
+			<li>MySQL</li>
+			<li>PostgreSQL</li>
+			<li>SQLite</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Skill: Tools</h2>
+		<ul class="skills-list">
+			<li>Docker</li>
+			<li>Git</li>
+			<li>Kubernetes</li>
+			<li>Linux</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Skill: Protocols</h2>
+		<ul class="skills-list">
+			<li>ActivityPub</li>
+			<li>ActivityStreams</li>
+			<li>Ethernet</li>
+			<li>Finger</li>
+			<li>Gemini</li>
+			<li><abbr title="Hypertext Transfer Protocol">HTTP</abbr></li>
+			<li>NodeInfo</li>
+			<li></li>
+			<li></li>
+			<li>WebFinger</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Industries</h2>
+		<ul class="industries-list">
+			<li>Academia</li>
+			<li>Adverstising</li>
+			<li>Analytics</li>
+			<li>Artificial Intelligence (<abbr title="artificial intelligenvec">AI</abbr>)</li>
+			<li>Banking</li>
+			<li>Blogging</li>
+			<li>Charity</li>
+			<li>Computer</li>
+			<li>Construction</li>
+			<li>Credit Bureau</li>
+			<li>Credit Card</li>
+			<li>Decentralized Finance (<abbr title="decentralized finance">DeFi</abbr>)</li>
+			<li>E-Commerce</li>
+			<li>Education</li>
+			<li>Fashion</li>
+			<li>Financial Technology (<abbr title="financial technology">FinTech</abbr>)</li>
+			<li>Freemium</li>
+			<li>Health Care</li>
+			<li>Identity Verification</li>
+			<li>Internet TV</li>
+			<li>Licensed Gaming</li>
+			<li>Machine Learning</li>
+			<li>Oil and Gas</li>
+			<li>Optometry</li>
+			<li>Ophthalmology</li>
+			<li>Payments</li>
+			<li>Podcasting</li>
+			<li>Real Estate</li>
+			<li>Social Media</li>
+			<li>Software</li>
+			<li>Software as a Service (<abbr title="software as a service">SaaS</abbr>)</li>
+			<li>Video Games</li>
+			<li>Vlogging</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>References</h2>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Beier Cai</h3>
+			</div>
+			<div class="entry-header">
+				<p>Founding Engineer @ Hootsuite, CTO @ Commit, CTO @ Cedar AI</p>
+			</div>
+			<blockquote>
+				<p>
+					Charles is a great and <strong>very experienced software developer</strong>.
+					Working with him on the same projects I learned that he has an <strong>extremely wide range of knowledge</strong> of software engineering and web application development.
+					Including back-end development, application design, database design, query optimization, and more.
+					And, he won't hestitate to share his knowledge with you.
+				</p>
+			</blockquote>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Radoslav Gazo</h3>
+			</div>
+			<div class="entry-header">
+				<p>Lead Software Engineer @ EA, CTO @ SettleUp</p>
+			</div>
+			<blockquote>
+				<p>
+					Charles is one of the <strong>best software engineers</strong> that I know.
+					We worked together at a number of different companies — including Electronics Arts (EA) and Hootsuite.
+				</p>
+			</blockquote>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Robert Reppel</h3>
+			</div>
+			<div class="entry-header">
+				<p>CTO @ Adaptech, CTO @ TwoTonic, Sr. Solutions Architect @ PayByPhone</p>
+			</div>
+			<blockquote>
+				<p>
+					Charles is an exceptional software engineer, passionate about his work, innovative and experienced.
+					He is also a great individual, a true team player, and fun to work with.
+					His prolific coding skills and understanding of the bigger picture were vital to success.
+				</p>
+			</blockquote>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Philippe Hilger</h3>
+			</div>
+			<div class="entry-header">
+				<p>Senior Software Engineer</p>
+			</div>
+			<blockquote>
+				<p>
+					Charles's software engineering and computing skills are wide-reaching.
+					He is organized, methodic, thinking logically yet always considering human aspects.
+					Charles is a born leader.
+					Yet, he will never hesitate to get hands-on, whenever needed, to make things happen as planned.
+				</p>
+			</blockquote>
+		</div>
+
+		<div class="entry">
+			<div class="entry-header">
+				<h3>Massoud Seifi</h3>
+			</div>
+			<div class="entry-header">
+				<p>CTO @ Railtown Ventures, Sr. Director @ GE</p>
+			</div>
+			<blockquote>
+				<p>
+					Charles is an awesome person to know and work with.
+					He has a great personality that is combined with his deep knowledge and experience in software engineering, system architecture, data science, and engineering mangement.
+					We have worked together at 3 different companies, and it was a pleasure to work with him each time.
+					Charles is very reliable, responsible, friendly, and hard working.
+				</p>
+			</blockquote>
+		</div>
+	</section>
+
+	<footer>
+		<p>Charles Iliya Krempeaux, B.Sc., Fractional <abbr title="chief technology officer">CTO</abbr></p>
+	</footer>
+
+</article>
+</main>
+</body>
+</html>
