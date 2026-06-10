@@ -1,0 +1,36 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams"
+	],
+	"id": "https://reiver.link/-/social/actor.jsonld",
+	"type": "Person",
+	"following": "https://reiver.link/-/social/following.jsonld",
+	"followers": "https://reiver.link/-/social/followers.jsonld",
+	"inbox": "https://reiver.link/-/social/inbox.jsonld",
+	"preferredUsername": "reiver",
+	"name": "Charles Iliya Krempeaux",
+	"summary": "The meaning of life — first survive, then reproduce 🌞",
+	"url": "http://reiver.link/",
+	"manuallyApprovesFollowers": true,
+	"discoverable": true,
+	"published": "1996-09-11T07:00:00Z",
+
+	"icon": {
+		"type": "Image",
+		"mediaType": "image/png",
+		"url": "https://reiver.link/avatar.png"
+	},
+	"image": {
+		"type": "Image",
+		"mediaType": "image/png",
+		"url": "https://reiver.link/banner.png"
+	},
+
+	"attachment": [
+		{
+			"type": "PropertyValue",
+			"name": "Location",
+			"value": "Metro Vancouver"
+		}
+	]
+}
