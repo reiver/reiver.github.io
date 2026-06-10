@@ -1,0 +1,10 @@
+{
+	"subject":"acct:reiver@reiver.link",
+	"links":[
+		{
+			"rel":"self",
+			"type":"application/activity+json",
+			"href":"https://reiver.link/-/social/actor.jsonld"
+		}
+	]
+}
