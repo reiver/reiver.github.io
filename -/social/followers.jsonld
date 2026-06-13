@@ -1,0 +1,8 @@
+{
+	"@context": "https://www.w3.org/ns/activitystreams",
+	"id": "https://reiver.link/-/social/followers.jsonld",
+	"type": "OrderedCollection",
+	"totalItems": 50777,
+	"first": "https://reiver.link/-/social/followers/5078.jsonld"
+	"last": "https://reiver.link/-/social/followers/1.jsonld"
+}
