@@ -115,6 +115,40 @@ h3 {
 
 /*************************************************************************
  *                                                                       *
+ * mark                                                                  *
+ *                                                                       *
+ *************************************************************************/
+
+mark {
+	color: #1d2129;
+	padding: 0.15em 0.3em;
+	border-radius: 4px;
+	box-decoration-break: clone; /* Ensures highlights wrap nicely over multiple lines */
+	-webkit-box-decoration-break: clone;
+}
+
+mark.yellow, mark {
+	background-color: rgb(255, 242, 117);
+}
+
+mark.cyan {
+	background-color: rgb(174, 226, 255);
+}
+
+mark.pink {
+	background-color: rgb(255, 198, 255);
+}
+
+mark.orange {
+	background-color: rgb(255, 210, 157);
+}
+
+mark.green {
+	background-color: rgb(191, 252, 198);
+}
+
+/*************************************************************************
+ *                                                                       *
  * entry                                                                 *
  *                                                                       *
  *************************************************************************/
@@ -238,7 +272,7 @@ footer {
 		<p>
 			<abbr title="Charles Iliya Krempeaux">He</abbr> is available as a <mark>fractional <abbr title="Chief Technology Officer">CTO</abbr></mark> to help <strong>early-stage start-ups</strong> and <strong>growth-stage companies</strong> with
 			rapid prototyping,
-			<strong>building MVPs</strong> (MVPs) from the ground up,
+			<mark class="cyan">building MVPs</mark> (MVPs) from the ground up,
 			<strong>crafting</strong> investor pitch-decks,
 			<strong>pitching</strong> to investors,
 			<strong>recruiting</strong> talent,
