@@ -232,6 +232,15 @@ mark.green {
 	color: #a0aab4;
 }
 
+.work::after {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 4px;
+	background-color: #3498db;
+	margin: 20px auto 0 auto;
+}
+
 /*************************************************************************
  *                                                                       *
  * entry                                                                 *
