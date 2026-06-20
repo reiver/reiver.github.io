@@ -162,7 +162,7 @@ mark.green {
  *                                                                       *
  *************************************************************************/
 
-.entry > hgroup {
+.work > hgroup {
 	display: grid;
 	grid-template-columns: 1fr 1fr; /* Create 2 columns */
 	grid-template-rows: auto auto;  /* Create 2 rows */
@@ -175,19 +175,19 @@ mark.green {
 }
 
 /* 1st child: row 2, column 1 (bottom-left) */
-.entry > hgroup *:nth-child(1) {
+.work > hgroup > .work-organization {
 	grid-row: 2;
 	grid-column: 1;
 }
 
 /* 2nd child: row 1, column 1 (top-left) */
-.entry > hgroup *:nth-child(2) {
+.work > hgroup > .work-role {
 	grid-row: 1;
 	grid-column: 1;
 }
 
 /* 3rd child: row 1, column 2 (top-right) */
-.entry > hgroup *:nth-child(3) {
+.work > hgroup > .work-date {
 	grid-row: 1;
 	grid-column: 2;
 }
