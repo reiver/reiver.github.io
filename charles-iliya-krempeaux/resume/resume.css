@@ -217,6 +217,21 @@ mark.green {
 	margin-bottom: 0;
 }
 
+.work > ul {
+	font-size: 0.9rem;
+	margin-top: 0.35rem;
+}
+
+.work ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.work ul li::before {
+	content: "\2014\00a0";
+	color: #a0aab4;
+}
+
 /*************************************************************************
  *                                                                       *
  * entry                                                                 *
