@@ -235,9 +235,9 @@ mark.green {
 .work::after {
 	content: "";
 	display: block;
-	width: 60px;
+	width: 40px;
 	height: 1px;
-	background-color: #657786;
+	background-color: oklab(71%, -3.5%, -7%);
 	margin: 20px auto 0 auto;
 }
 
