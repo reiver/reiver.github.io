@@ -192,7 +192,7 @@ mark.green {
 	grid-column: 2;
 }
 
-.work > hgroup p {
+.work > hgroup .work-organization {
 	font-size: 0.9rem;
 	color: #657786;
 	font-style: italic;
