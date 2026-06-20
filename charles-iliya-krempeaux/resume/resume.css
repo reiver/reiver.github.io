@@ -236,8 +236,8 @@ mark.green {
 	content: "";
 	display: block;
 	width: 60px;
-	height: 4px;
-	background-color: #3498db;
+	height: 1px;
+	background-color: #657786;
 	margin: 20px auto 0 auto;
 }
 
