@@ -208,17 +208,18 @@ mark.green {
 	gap: 0 1rem;
 }
 
-.entry-header .date {
-	font-size: 0.85rem;
-	color: #657786;
-	white-space: nowrap;
-}
-
 .entry-header p,
 .entry > hgroup p {
 	font-size: 0.9rem;
 	color: #657786;
 	font-style: italic;
+}
+
+.entry-header .date,
+.entry > hgroup .date {
+	font-size: 0.85rem;
+	color: #657786;
+	white-space: nowrap;
 }
 
 .entry > p,
