@@ -214,7 +214,8 @@ mark.green {
 	white-space: nowrap;
 }
 
-.entry-header p {
+.entry-header p,
+.entry > hgroup p {
 	font-size: 0.9rem;
 	color: #657786;
 	font-style: italic;
