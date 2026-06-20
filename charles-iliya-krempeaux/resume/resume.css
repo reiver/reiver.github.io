@@ -197,7 +197,7 @@ mark.green {
 	font-weight: 700;
 }
 
-.work > hgroup .work-organization {
+.work > hgroup > .work-organization {
 	font-size: 0.9rem;
 	color: #657786;
 	font-style: italic;
