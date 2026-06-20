@@ -190,6 +190,7 @@ mark.green {
 .work > hgroup > .work-date {
 	grid-row: 1;
 	grid-column: 2;
+	justify-self: end;
 }
 
 .work > hgroup > .work-role {
