@@ -192,6 +192,11 @@ mark.green {
 	grid-column: 2;
 }
 
+.work > hgroup > .work-role {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
 .work > hgroup .work-organization {
 	font-size: 0.9rem;
 	color: #657786;
