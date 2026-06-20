@@ -193,18 +193,18 @@ mark.green {
 	justify-self: end;
 }
 
-.work > hgroup > .work-role {
+.work .work-role {
 	font-size: 1rem;
 	font-weight: 700;
 }
 
-.work > hgroup > .work-organization {
+.work .work-organization {
 	font-size: 0.9rem;
 	color: #657786;
 	font-style: italic;
 }
 
-.work > hgroup > .work-date {
+.work .work-date {
 	font-size: 0.85rem;
 	color: #657786;
 	white-space: nowrap;
