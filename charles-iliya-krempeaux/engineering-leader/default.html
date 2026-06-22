@@ -391,15 +391,20 @@
 		</div>
 	</section>
 
-	<section>
+	<section property="alumniOf" typeof="EducationalOrganization">
 		<h2>Education</h2>
 		<div class="entry">
-			<div class="entry-header">
-				<h3><abbr title="Bachelor of Science">B.Sc.</abbr> Computer Science (Major) and Mathematics</h3>
+			<div class="entry-header" property="hasCredential" typeof="EducationalOccupationalCredential">
+				<h3>
+					<span property="credentialCategory">Bachelor of Science (<abbr title="Bachelor of Science">B.Sc.</abbr>)</span>
+					<span property="about">Computer Science</span> (Major) and <span property="about">Mathematics</span>
+				</h3>
 				<span class="date">2000</span>
 			</div>
 			<div class="entry-header">
-				<p>Simor Fraser University</p>
+				<p property="name">Simon Fraser University</p>
+				<meta property="sameAs" content="https://www.sfu.ca/" />
+				<meta property="sameAs" content="https://en.wikipedia.org/wiki/Simon_Fraser_University" />
 			</div>
 		</div>
 	</section>
